@@ -166,7 +166,8 @@ bool SimpleEQAudioProcessor::hasEditor() const
 
 juce::AudioProcessorEditor* SimpleEQAudioProcessor::createEditor()
 {
-    return new SimpleEQAudioProcessorEditor (*this);
+    //return new SimpleEQAudioProcessorEditor (*this);
+    return new juce::GenericAudioProcessorEditor (*this);
 }
 
 //==============================================================================
@@ -212,11 +213,8 @@ juce::AudioProcessorValueTreeState::ParameterLayout
             stringArray.add(str);
         }
         
-        
-        
-        layout.add(std::make_unique<juce::AudioParameterFloat>("LowCut Quality",
-                                                               "LowCut Quality",
-                                                               juce::NormalisableRange<float>(0.1f, 10.f, 0.05f, 1.f), 1.f));
+        layout.add(std::make_unique<juce::AudioParameterChoice>("Lowcut Slope", "Lowcut Slope", stringArray, 0));
+        layout.add(std::make_unique<juce::AudioParameterChoice>("Highcut Slope", "Highcut Slope", stringArray, 0));
         
         return layout;
 }
