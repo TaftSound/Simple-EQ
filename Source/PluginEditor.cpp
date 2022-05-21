@@ -17,8 +17,8 @@ peakGainSliderAttachment(audioProcessor.apvts, "Peak Gain", peakGainSlider),
 peakQualitySliderAttachment(audioProcessor.apvts, "Peak Quality", peakQualitySlider),
 lowCutFreqSliderAttachment(audioProcessor.apvts, "LowCut Freq", lowCutFreqSlider),
 highCutFreqSliderAttachment(audioProcessor.apvts, "HighCut Freq", highCutFreqSlider),
-lowCutSlopeChoiceAttachment(audioProcessor.apvts, "LowCut Slope", lowCutSlopeChoice),
-highCutSlopeChoiceAttachment(audioProcessor.apvts, "HighCut Slope", highCutSlopeChoice)
+lowCutSlopeSliderAttachment(audioProcessor.apvts, "LowCut Slope", lowCutSlopeSlider),
+highCutSlopeSliderAttachment(audioProcessor.apvts, "HighCut Slope", highCutSlopeSlider)
 
 {
     // Make sure that before the constructor has finished, you've set the
@@ -27,8 +27,7 @@ highCutSlopeChoiceAttachment(audioProcessor.apvts, "HighCut Slope", highCutSlope
     {
         addAndMakeVisible(comp);
     }
-    addAndMakeVisible(lowCutSlopeChoice);
-    addAndMakeVisible(highCutSlopeChoice);
+    
     
     setSize (600, 400);
 }
@@ -56,10 +55,10 @@ void SimpleEQAudioProcessorEditor::resized()
     auto highCutArea = bounds.removeFromRight(bounds.getWidth() * 0.5);
     
     lowCutFreqSlider.setBounds(lowCutArea.removeFromTop(lowCutArea.getHeight() * 0.5));
-    lowCutSlopeChoice.setBounds(lowCutArea);
+    lowCutSlopeSlider.setBounds(lowCutArea);
     
     highCutFreqSlider.setBounds(highCutArea.removeFromTop(highCutArea.getHeight() * 0.5));
-    highCutSlopeChoice.setBounds(highCutArea);
+    highCutSlopeSlider.setBounds(highCutArea);
     
     peakFreqSlider.setBounds(bounds.removeFromTop(bounds.getHeight() * 0.33));
     peakGainSlider.setBounds(bounds.removeFromTop(bounds.getHeight() * 0.5));
@@ -77,6 +76,8 @@ std::vector<juce::Component*> SimpleEQAudioProcessorEditor::getComps()
         &peakGainSlider,
         &peakQualitySlider,
         &lowCutFreqSlider,
-        &highCutFreqSlider
+        &highCutFreqSlider,
+        &lowCutSlopeSlider,
+        &highCutSlopeSlider
     };
 }

@@ -43,23 +43,20 @@ private:
     peakGainSlider,
     peakQualitySlider,
     lowCutFreqSlider,
-    highCutFreqSlider;
-    
-    juce::ComboBox lowCutSlopeChoice,
-    highCutSlopeChoice;
+    highCutFreqSlider,
+    lowCutSlopeSlider,
+    highCutSlopeSlider;
     
     using APVTS = juce::AudioProcessorValueTreeState;
-    using SliderAttach = APVTS::SliderAttachment;
-    using ComboAttach = APVTS::ComboBoxAttachment;
+    using Attachment = APVTS::SliderAttachment;
     
-    SliderAttach peakFreqSliderAttachment,
+    Attachment peakFreqSliderAttachment,
     peakGainSliderAttachment,
     peakQualitySliderAttachment,
     lowCutFreqSliderAttachment,
-    highCutFreqSliderAttachment;
-    
-    ComboAttach lowCutSlopeChoiceAttachment,
-    highCutSlopeChoiceAttachment;
+    highCutFreqSliderAttachment,
+    lowCutSlopeSliderAttachment,
+    highCutSlopeSliderAttachment;
     
     std::vector<juce::Component*> getComps();
      
