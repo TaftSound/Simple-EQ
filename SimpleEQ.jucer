@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="WKqmck" name="SimpleEQ" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
-              pluginFormats="buildAU,buildVST3" pluginCharacteristicsValue="pluginProducesMidiOut,pluginWantsMidiIn"
+              pluginFormats="buildAU,buildStandalone,buildVST3" pluginCharacteristicsValue="pluginProducesMidiOut,pluginWantsMidiIn"
               pluginVST3Category="EQ" pluginRTASCategory="1" cppLanguageStandard="17">
   <MAINGROUP id="WWMgIP" name="SimpleEQ">
     <GROUP id="{70BD77DD-74B3-966B-66DE-45A031E66032}" name="Source">
